@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <div>
-       <Categories categories={categories}/>
+        <Categories categories={categories}/>
     </div>
   );
 }
