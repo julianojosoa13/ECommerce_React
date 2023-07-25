@@ -1,0 +1,10 @@
+.sign-in-container {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+
+    .buttons-container {
+        display: flex;
+        flex-direction: row;
+    }
+}
