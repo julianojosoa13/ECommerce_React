@@ -1,10 +1,6 @@
-h1 {
-   text-align: center;
-}
-
-.form-container {
+.authentication-container {
     display: flex;
-    flex-direction: row;
-    padding: 50px;
-    justify-content: space-evenly;
+    width: 900px;
+    margin: 30px auto;
+    justify-content: space-between;
 }
