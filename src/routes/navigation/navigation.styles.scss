@@ -21,6 +21,19 @@
     .nav-link {
       padding: 10px 15px;
       cursor: pointer;
+
+      .username-container {
+        display: none;
+        color: green;
+      }
+    }
+
+    .nav-link:hover {
+      .username-container {
+      display: block;
+      color: red;
+      font-size: 11px;
+      }
     }
   }
 }
