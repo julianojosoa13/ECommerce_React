@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../contexts/cart.context';
 
 const CheckoutPage = () => {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, addItemToCart, removeItemToCart } = useContext(CartContext);
 
     return (
         <div>
@@ -17,7 +17,9 @@ const CheckoutPage = () => {
                             return (
                                 <div key={id}> 
                                     <h2>{name}</h2>
+                                    <div onClick={() => removeItemToCart(item)}>-</div>
                                     <span>{quantity}</span>
+                                    <div onClick={() => addItemToCart(item)}>+</div>
                                 </div>
                             )       
                         }
