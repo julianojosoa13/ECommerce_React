@@ -6,7 +6,7 @@ import Button from "../button/button.component";
 
 import { UserContext } from "../../contexts/user.context";
 
-import './sign-up-form.styles.scss';
+import {SignUpContainer, Subtitle} from './sign-up-form.styles.jsx';
 
 const defaultFormFields = {
     displayName: '',
@@ -56,8 +56,8 @@ const SignUpForm = () => {
     }
 
     return (
-        <div className="sign-up-container">
-            <h2>Don't have an account?</h2>
+        <SignUpContainer>
+            <Subtitle>Don't have an account?</Subtitle>
             <span>Sign up with your email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput label='Display Name' type="text" onChange={handleChange} name="displayName" value={displayName} required />
@@ -70,7 +70,7 @@ const SignUpForm = () => {
 
                 <Button type="submit">Sign Up</Button>
             </form>
-        </div>
+        </SignUpContainer>
     );
 }
 

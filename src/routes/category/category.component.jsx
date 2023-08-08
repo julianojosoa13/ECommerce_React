@@ -20,7 +20,7 @@ const Category = () => {
 
     return (
         <Fragment>
-            <h2 className='title'>{category.toUpperCase()}</h2>
+            <h2 className='category-title'>{category.toUpperCase()}</h2>
             <div className='category-page-container'>
                 {
                     products && products.map((product) =>  product && <ProductCard key={product.id} product={product}/>)
