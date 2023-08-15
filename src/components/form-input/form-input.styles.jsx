@@ -20,7 +20,7 @@ left: 5px;
 top: 10px;
 transition: 300ms ease all;
 
-${({shrink})=> shrink && shrinkLabelStyles};
+${props => props.shrink && shrinkLabelStyles};
 ` 
 export const Input = styled.input`
 background: none;
