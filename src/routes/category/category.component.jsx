@@ -12,7 +12,7 @@ const Category = () => {
 
     const {categories} = useContext(CategoriesContext)
     
-    const [products, setProducts] = useState([categories[category]]);
+    const [products, setProducts] = useState(categories[category]);
 
     useEffect(()=>{
         setProducts(categories[category]);
@@ -23,7 +23,9 @@ const Category = () => {
             <h2 className='category-title'>{category.toUpperCase()}</h2>
             <div className='category-page-container'>
                 {
-                    products && products.map((product) =>  <Fragment key={product.id}>{product && <ProductCard product={product}/>}</Fragment>) 
+                    products && products.map((product) =>{
+                        return (<ProductCard key={product.id} product={product}/>)
+                    } ) 
                 }
             </div>
         </Fragment>            
