@@ -31,7 +31,7 @@ const NavigationBar = () => {
                 </NavLink>
                 {
                     currentUser? (
-                        <NavLink as="span" onClick={signOutHandler}>SIGNOUT <UsernameContainer> {currentUser.displayName}</UsernameContainer> </NavLink>
+                        <NavLink as="span" onClick={signOutHandler}>SIGN OUT<UsernameContainer>{currentUser.displayName}</UsernameContainer> </NavLink>
                     ) : (
                         <NavLink to='/sign-in'>
                             SIGN-IN

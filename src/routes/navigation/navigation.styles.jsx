@@ -28,8 +28,8 @@ export const NavLink = styled(Link)`
 `
 export const UsernameContainer = styled.span`
   display: block;
-  color: green;
-  font-size: 11px;
+  color: black;
+  font-size: 12px;
 
   &::hover {
     display: block;
