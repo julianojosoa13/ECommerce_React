@@ -10,9 +10,11 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { CartContext } from "../../contexts/cart.context";
 
 import { LogoContainer, NavigationContainer, UsernameContainer, NavLinks, NavLink } from "./navigation.styles.jsx";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector.js";
 
 const NavigationBar = () => {
-    const { currentUser } = useContext(UserContext);
+    const currentUser = useSelector(selectCurrentUser)
     const { isCartOpen } = useContext(CartContext)
 
     const signOutHandler = async () => {
