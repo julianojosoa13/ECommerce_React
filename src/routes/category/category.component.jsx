@@ -1,6 +1,6 @@
 import './category.styles.scss';
 
-import {  Fragment, useContext, useEffect, useState } from 'react';
+import {  Fragment, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import ProductCard from '../../components/product-card/product-card.component';
@@ -10,13 +10,13 @@ import { selectCategoriesMap } from '../../store/categories/category.selector';
 const Category = () => {
     const {category} = useParams();
 
-    const categories = useSelector(selectCategoriesMap)
+    const categoriesMap = useSelector(selectCategoriesMap)
     
-    const [products, setProducts] = useState(categories[category]);
+    const [products, setProducts] = useState(categoriesMap[category]);
 
     useEffect(()=>{
-        setProducts(categories[category]);
-    }, [category, categories])
+        setProducts(categoriesMap[category]);
+    }, [category, categoriesMap])
 
     return (
         <Fragment>
