@@ -1,46 +1,41 @@
-import './checkout.styles.scss';
+import "./checkout.styles.scss";
 
-import { useContext } from 'react';
-
-import { CartContext } from '../../contexts/cart.context';
-
-import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import { useSelector } from "react-redux";
+import {
+  selectCartItems,
+  selectCartTotal,
+} from "../../store/cart/cart.selector";
 
 const CheckoutPage = () => {
-    const { cartItems, addItemToCart, removeItemToCart, cartTotal } = useContext(CartContext);
+  const cartItems = useSelector(selectCartItems);
+  const cartTotal = useSelector(selectCartTotal);
 
-    return (
-        <div className='checkout-container'>
-            <div className='checkout-header'>
-                <div className='header-block'>
-                    <span>product</span>
-                </div>
-                <div className='header-block'>
-                    <span>Description</span>
-                </div>
-                <div className='header-block'>
-                    <span>Quantity</span>
-                </div>
-                <div className='header-block'>
-                    <span>Price</span>
-                </div>
-                <div className='header-block'>
-                    <span>Remove</span>
-                </div>
-            </div>
-            {
-                cartItems.map((item) => {
-                       
-                        return (
-                            <CheckoutItem key={item.id} item={item} />
-                        )       
-                    }
-                )
-
-            }
-            <span className='total'>Total: ${cartTotal}</span>
+  return (
+    <div className="checkout-container">
+      <div className="checkout-header">
+        <div className="header-block">
+          <span>product</span>
         </div>
-    )
-}
+        <div className="header-block">
+          <span>Description</span>
+        </div>
+        <div className="header-block">
+          <span>Quantity</span>
+        </div>
+        <div className="header-block">
+          <span>Price</span>
+        </div>
+        <div className="header-block">
+          <span>Remove</span>
+        </div>
+      </div>
+      {cartItems.map((item) => {
+        return <CheckoutItem key={item.id} item={item} />;
+      })}
+      <span className="total">Total: ${cartTotal}</span>
+    </div>
+  );
+};
 
 export default CheckoutPage;

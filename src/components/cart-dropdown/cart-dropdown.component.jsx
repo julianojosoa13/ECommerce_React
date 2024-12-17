@@ -1,6 +1,4 @@
 import "./cart-dropdown.styles.jsx";
-
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../button/button.component";
@@ -11,9 +9,10 @@ import {
   EmptyMessage,
 } from "./cart-dropdown.styles.jsx";
 import { selectCartItems } from "../../store/cart/cart.selector.js";
+import { useSelector } from "react-redux";
 
 const CartDropdown = () => {
-  const cartItems = selectCartItems();
+  const cartItems = useSelector(selectCartItems);
 
   const navigate = useNavigate();
 
