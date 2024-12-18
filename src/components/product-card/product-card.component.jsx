@@ -14,6 +14,7 @@ const ProductCard = ({ product }) => {
   const addProductToCart = () => {
     dispatch(addItemToCart(cartItems, product));
   };
+
   return (
     <div className="product-card-container">
       <img src={imageUrl} alt={`${name}`} />
