@@ -21,6 +21,7 @@ import {
   query,
   getDocs,
 } from "firebase/firestore";
+import { Exception } from "sass";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDQRM_kyzxEnq7QKtaUqm5KIZF3onNaI_s",
@@ -80,9 +81,7 @@ export const getCategoriesAndDocuments = async () => {
   const collectionRef = await collection(db, "categories");
 
   const q = await query(collectionRef);
-
   const querySnapshot = await getDocs(q);
-
   return await querySnapshot.docs.map((dockSnapshot) => dockSnapshot.data());
 };
 
