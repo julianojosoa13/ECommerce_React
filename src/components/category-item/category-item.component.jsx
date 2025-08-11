@@ -15,7 +15,7 @@ const CategoryItem = ({ category }) => {
   };
   return (
     <CategoryContainer onClick={onNavigateHandler}>
-      <BackgroundImage imageUrl={imageUrl} />
+      <BackgroundImage imageurl={imageUrl} />
       <CategoryBodyContainer>
         <h2>{title}</h2>
         <p>Shop now</p>

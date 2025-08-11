@@ -41,7 +41,7 @@ const NavigationBar = () => {
               </UsernameContainer>{" "}
             </NavLink>
           ) : (
-            <NavLink to="/sign-in">SIGN-IN</NavLink>
+            <NavLink to="/auth">SIGN-IN</NavLink>
           )}
 
           <CartIcon />
