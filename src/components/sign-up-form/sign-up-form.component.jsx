@@ -1,14 +1,10 @@
-import { useState, useContext } from "react";
-import {
-  createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
-} from "../../utils/firebase/firebase.utils";
+import { useState } from "react";
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
 
 import { SignUpContainer, Subtitle } from "./sign-up-form.styles.jsx";
-import { setCurrentUser, signUpStart } from "../../store/user/user.action.js";
+import { signUp } from "../../store/user/user.thunk.js";
 import { useDispatch } from "react-redux";
 
 const defaultFormFields = {
@@ -41,7 +37,7 @@ const SignUpForm = () => {
 
     try {
       console.log(displayName);
-      disptach(signUpStart(email, password, displayName));
+      disptach(signUp(email, password, displayName));
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-user") {

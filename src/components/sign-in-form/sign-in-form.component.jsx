@@ -8,10 +8,7 @@ import {
   ButtonsContainer,
   Subtitle,
 } from "./sign-in-form.styles.jsx";
-import {
-  emailSignInStart,
-  googleSignInStart,
-} from "../../store/user/user.action.js";
+import { emailSignIn, googleSignIn } from "../../store/user/user.thunk.js";
 import { useDispatch } from "react-redux";
 
 const defaultFormFields = {
@@ -32,7 +29,7 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      dispatch(emailSignInStart(email, password));
+      dispatch(emailSignIn(email, password));
       resetFields();
     } catch (error) {
       switch (error.code) {
@@ -54,7 +51,7 @@ const SignInForm = () => {
   };
 
   const logGoogleuser = async () => {
-    dispatch(googleSignInStart());
+    dispatch(googleSignIn());
   };
 
   return (
