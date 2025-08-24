@@ -7,7 +7,7 @@ import Home from "./routes/home/home.component";
 import Shop from "./routes/shop/shop.component";
 import Authentication from "./routes/authentication/authentication.component";
 import CheckoutPage from "./routes/checkout/checkout.component";
-import { store, persistor } from "./store/store";
+import { store } from "./store/store";
 import App from "./App";
 import "./index.scss";
 import Category from "./routes/category/category.component";
@@ -36,9 +36,9 @@ const root = createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <RouterProvider router={router} />
-      </PersistGate>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+      <RouterProvider router={router} />
+      {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>
 );
