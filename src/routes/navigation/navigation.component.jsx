@@ -12,6 +12,7 @@ import {
   UsernameContainer,
   NavLinks,
   NavLink,
+  LineBreak,
 } from "./navigation.styles.jsx";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/user/user.selector.js";
@@ -35,10 +36,9 @@ const NavigationBar = () => {
           <NavLink to="/shop">SHOP</NavLink>
           {currentUser ? (
             <NavLink as="span" onClick={signOutHandler}>
+              <UsernameContainer>{currentUser.displayName}</UsernameContainer>
+              <LineBreak />
               SIGN OUT
-              <UsernameContainer>
-                {currentUser.displayName}
-              </UsernameContainer>{" "}
             </NavLink>
           ) : (
             <NavLink to="/auth">SIGN-IN</NavLink>
