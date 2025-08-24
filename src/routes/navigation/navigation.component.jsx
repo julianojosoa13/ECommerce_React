@@ -13,12 +13,13 @@ import {
   LineBreak,
 } from "./navigation.styles.jsx";
 import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser } from "../../store/user/user.selector.js";
 import { selectIsCartOpen } from "../../store/cart/cart.selector.js";
 import { signOut } from "../../store/user/user.thunk.js";
 
 const NavigationBar = () => {
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const currentUser = useSelector(selectCurrentUser);
   const isCartOpen = useSelector(selectIsCartOpen);
 
   const signOutHandler = async () => {
