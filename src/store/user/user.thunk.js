@@ -31,6 +31,7 @@ export const emailSignIn = createAsyncThunk(
         email,
         password
       );
+      console.log("user >>> ", user);
       const userSnapshot = await createUserDocumentFromAuth(user);
       return { id: userSnapshot.id, ...userSnapshot.data() };
     } catch (error) {

@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       {
-        path: "shop",
+        path: "shop/*",
         element: <Shop />,
         children: [
           // Add nested shop routes if needed

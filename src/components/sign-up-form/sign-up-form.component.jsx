@@ -37,7 +37,7 @@ const SignUpForm = () => {
 
     try {
       console.log(displayName);
-      disptach(signUp(email, password, displayName));
+      disptach(signUp({ email, password, displayName }));
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/email-already-in-user") {

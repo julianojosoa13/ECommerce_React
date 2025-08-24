@@ -6,7 +6,7 @@ export const BackgroundImage = styled.div`
   background-size: cover;
   background-position: center;
 
-  background-image: url(${(props) => props.imageurl});
+  background-image: url(${(props) => props.$imageurl});
 `;
 export const CategoryBodyContainer = styled.div`
   height: 90px;

@@ -29,7 +29,7 @@ const SignInForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      dispatch(emailSignIn(email, password));
+      dispatch(emailSignIn({ email, password }));
       resetFields();
     } catch (error) {
       switch (error.code) {
