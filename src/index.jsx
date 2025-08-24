@@ -11,6 +11,8 @@ import { persistor, store } from "./store/store";
 import App from "./App";
 import "./index.scss";
 import Category from "./routes/category/category.component";
+import { Elements } from "@stripe/react-stripe-js";
+import { stripePromise } from "./utils/stripe/stripe.utils";
 
 const router = createBrowserRouter([
   {
@@ -37,7 +39,9 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <RouterProvider router={router} />
+        <Elements stripe={stripePromise}>
+          <RouterProvider router={router} />
+        </Elements>
       </PersistGate>
     </Provider>
   </React.StrictMode>
