@@ -10,6 +10,7 @@ import {
 } from "./sign-in-form.styles.jsx";
 import { emailSignIn, googleSignIn } from "../../store/user/user.thunk.js";
 import { useDispatch } from "react-redux";
+import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils.js";
 
 const defaultFormFields = {
   email: "",
@@ -51,7 +52,8 @@ const SignInForm = () => {
   };
 
   const logGoogleuser = async () => {
-    dispatch(googleSignIn());
+    const { user } = await signInWithGooglePopup();
+    dispatch(googleSignIn(user));
   };
 
   return (
