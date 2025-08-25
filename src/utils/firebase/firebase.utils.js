@@ -21,20 +21,19 @@ import {
   query,
   getDocs,
 } from "firebase/firestore";
-import { Exception } from "sass";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDQRM_kyzxEnq7QKtaUqm5KIZF3onNaI_s",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
 
-  authDomain: "crwn-clothing-db-1b0ee.firebaseapp.com",
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
 
-  projectId: "crwn-clothing-db-1b0ee",
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
 
-  storageBucket: "crwn-clothing-db-1b0ee.appspot.com",
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
 
-  messagingSenderId: "343770157825",
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
 
-  appId: "1:343770157825:web:3f338aa3f315404431c100",
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
